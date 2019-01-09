@@ -18,12 +18,15 @@ class App extends React.Component {
     super();
     this.state = {
       characterList: disneyData,
-      inputText: "hey, i'm in state!"
+      characterName: "",
+      characterMovie: ""
     };
   }
 
   handleChanges = event => {
-    this.setState({});
+    //name has to match property on state
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(event.target.name);
   };
 
   render() {
@@ -32,7 +35,8 @@ class App extends React.Component {
         <CharacterList disneyData={this.state.characterList} />
         <CharacterForm
           handleChanges={this.handleChanges}
-          inputText={this.state.inputText}
+          characterName={this.state.characterName}
+          characterMovie={this.state.characterMovie}
         />
       </div>
     );

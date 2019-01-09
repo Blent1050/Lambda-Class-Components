@@ -4,9 +4,15 @@ function CharacterForm(props) {
   return (
     <form>
       <input
-        value={props.inputText}
+        value={props.characterName}
         type="text"
-        placeholder="Add new Character"
+        name="characterName"
+        onChange={props.handleChanges}
+      />
+      <input
+        value={props.characterMovie}
+        type="text"
+        name="characterMovie"
         onChange={props.handleChanges}
       />
     </form>
