@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import CharacterList from "./components/CharacterList";
 import "./styles.css";
 
 const disneyData = [
@@ -11,11 +12,10 @@ const disneyData = [
   { characterName: "Pluto" }
 ];
 
-function App() {
-  const mappedData = disneyData.map(character => {
-    return <div>{character.characterName}</div>;
-  });
-  return <div className="App">{mappedData}</div>;
+class App extends React.Component {
+  render() {
+    return <CharacterList disneyData={disneyData} />;
+  }
 }
 
 const rootElement = document.getElementById("root");
