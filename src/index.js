@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./styles.css";
 
 import CharacterList from "./components/CharacterList";
-import "./styles.css";
+import CharacterForm from "./components/CharacterForm";
 
 const disneyData = [
   { characterName: "Mickey Mouse" },
@@ -13,8 +14,21 @@ const disneyData = [
 ];
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      characterList: disneyData,
+      inputText: "hey, i'm in state!"
+    };
+  }
+
   render() {
-    return <CharacterList disneyData={disneyData} />;
+    return (
+      <div className="App">
+        <CharacterList disneyData={this.state.characterList} />
+        <CharacterForm inputText={this.state.inputText} />
+      </div>
+    );
   }
 }
 
