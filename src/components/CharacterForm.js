@@ -15,6 +15,7 @@ function CharacterForm(props) {
         name="characterMovie"
         onChange={props.handleChanges}
       />
+      <button onClick={props.addNewCharacter}>Add Character</button>
     </form>
   );
 }

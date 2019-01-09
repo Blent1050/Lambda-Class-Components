@@ -29,11 +29,21 @@ class App extends React.Component {
     console.log(event.target.name);
   };
 
+  addNewCharacter = event => {
+    event.preventDefault();
+    this.setState({
+      characterList: [
+        ...this.state.characterList,
+        { characterName: this.state.characterName }
+      ]
+    });
+  };
   render() {
     return (
       <div className="App">
         <CharacterList disneyData={this.state.characterList} />
         <CharacterForm
+          addNewCharacter={this.addNewCharacter}
           handleChanges={this.handleChanges}
           characterName={this.state.characterName}
           characterMovie={this.state.characterMovie}
