@@ -7,9 +7,7 @@ function CharacterForm(props) {
         value={props.inputText}
         type="text"
         placeholder="Add new Character"
-        onChange={event => {
-          console.log(event);
-        }}
+        onChange={props.handleChanges}
       />
     </form>
   );

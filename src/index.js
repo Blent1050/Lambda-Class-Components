@@ -22,11 +22,18 @@ class App extends React.Component {
     };
   }
 
+  handleChanges = event => {
+    this.setState({});
+  };
+
   render() {
     return (
       <div className="App">
         <CharacterList disneyData={this.state.characterList} />
-        <CharacterForm inputText={this.state.inputText} />
+        <CharacterForm
+          handleChanges={this.handleChanges}
+          inputText={this.state.inputText}
+        />
       </div>
     );
   }
